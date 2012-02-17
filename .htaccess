@@ -1,0 +1,7 @@
+# Use PHP5 Single php.ini as default
+AddHandler fcgid-script .php
+AddHandler fcgid-script .fcgi
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ easyhooks.fcgi/$1 [QSA,L]
