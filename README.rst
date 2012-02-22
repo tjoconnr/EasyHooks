@@ -4,7 +4,7 @@ EasyHooks
 Overview
 -------------------
 
-Docs for this app: http://readthedocs.org/docs/easyhooks/
+Docs for this app: http://easyhooks.readthedocs.org/
 
 
 Contributors
