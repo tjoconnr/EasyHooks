@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     url(r'^$', 'pages.views.index'),
 #    url(r'^hooks/$', 'hooks.views.index'),
 #    url(r'^hooks/(?P<hook_id>\d+)/$', 'hooks.views.details')),
+    url(r'^quickstart/', include('quickstart.urls') ),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

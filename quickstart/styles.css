@@ -1,0 +1,169 @@
+﻿/*
+**************************************
+**  HS Quickstart - Styles.css
+**  TJ O'Connor / 3-9-2012
+**************************************
+*/
+#htmlFrame
+{
+    margin: 20px 0;
+	min-height:500px;
+	background:white;
+	border:solid 1px #cccccc;	
+}
+
+#htmlFrame a.logo-thumb
+{
+	padding:10px; background:white;
+	border:solid 5px #ffffff;
+	display:block;
+	float:left;
+	margin:0 15px 10px 0;
+	overflow:hidden
+}
+#htmlFrame a:hover.logo-thumb
+{
+	border: solid 5px #cccccc;
+}
+#htmlFrame a.logo-thumb.show-more{
+	display:none; 
+}
+
+#htmlFrame a.logo-thumb.selected
+{
+	border: solid 5px #3574E3;
+}
+#htmlFrame a.logo-thumb img {max-height:100px; max-width:300px;}
+
+#htmlFrame div.help { width:780px; height:500px; overflow:auto; padding:20px;  }
+
+
+#btnURL
+{
+    padding: 9px 18px 10px;
+    position: relative;
+    top: -2px;
+}
+#txtURL
+{
+    font-style: italic;
+    color: #999999;
+}
+#txtURL.active, #txtURL.on
+{
+    font-style: normal;
+    color: Black;
+}
+
+ul#quickstart-steps
+{
+    list-style: none;
+    margin: 20px 0 0 10px;
+    padding: 0;
+}
+ul#quickstart-steps li
+{
+    padding: 15px 20px 20px;
+	border-bottom:dotted 1px #d9d9d9;
+}
+ul#quickstart-steps.active li{ 
+    cursor:pointer; 
+}
+ul#quickstart-steps li:hover, ul#quickstart-steps li.selected
+{
+/*
+    -moz-border-radius: 7px 7px 0 0;
+    -webkit-border-radius: 7px;
+    -o-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -khtml-border-radius: 7px;
+    border-radius: 0 7px 7px 0;
+    border: 1px solid #f1f1f1;        
+	background: #f1f1f1;
+*/
+}
+ul#quickstart-steps li h2 {
+	color:#999999;
+}
+ul#quickstart-steps li.selected h2,
+ul#quickstart-steps.active li:hover h2 {
+	color:#333333;
+}
+ul#quickstart-steps li div {
+	display:none;
+	height:100px;	
+	width:170px;
+	border:solid 1px #666666;
+}
+
+#sidebar
+{
+    width: 230px;
+    float: right;
+}
+/*
+**************************************
+**  HS Style Guide Overrides 
+**************************************
+*/
+.hs-button
+{
+    text-align: center;
+}
+
+.hs-form.stacked
+{
+    padding-left: 0;
+}
+
+.hs-form.stacked div.error
+{
+    padding: 3px 10px 6px;
+    margin: 10px 0 0 0;
+    min-width: 390px;
+}
+
+div.hs-message
+{
+    margin: 10px 0 0;
+}
+
+.hs-input.huge
+{
+    width: 590px;
+    font-size: 18px;
+    padding: 6px;
+    height: auto;
+}
+
+.hs-form .field-group
+{
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -o-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -khtml-border-radius: 7px;
+    border-radius: 7px;
+    border: 1px solid #CCC;
+    background: white;
+    margin: 0px 0px 40px 0px;
+    padding: 17px 26px 0px 20px;
+    background: #EEE;
+}
+
+.hs-form div.actions
+{
+    -moz-border-radius: 0px 0px 7px 7px;
+    -webkit-border-radius: 0px 0px 7px 7px;
+    -o-border-radius: 0px 0px 7px 7px;
+    -ms-border-radius: 0px 0px 7px 7px;
+    -khtml-border-radius: 0px 0px 7px 7px;
+    border-radius: 0px 0px 7px 7px;
+    margin: 0px -26px 0px;
+    padding-left: 176px;
+    border-top: 1px solid #DDD;
+    padding-left: 26px;
+    margin: 0px -26px 0px;
+    text-align: right;
+    height: 30px;
+}

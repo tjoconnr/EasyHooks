@@ -1,0 +1,98 @@
+<!DOCTYPE />
+<html lang="en">
+<head>
+<title>HubSpot - Quickstart Prototype</title>
+<link rel="stylesheet" type="text/css" href="https://static.hubspot.com/bundles/style_guide_plus_base_v1.1.css" />
+<link rel="stylesheet" type="text/css" href="styles.css" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="scripts.js"></script>
+</head>
+<body>
+<div id="container" style="width: 1100px; margin: 40px auto; display: none;">
+  <!-- BEGIN QUICKSTART HTML -->
+  <input type="hidden" id="quickstart-step" value="0" />
+  <div id="sidebar">
+    <ul id="quickstart-steps">
+      <li class="quickstart-logo">
+        <h2>1. Logo</h2>
+        <div id="quickstart-logo-preview"> </div>
+      </li>
+      <li class="quickstart-colors">
+        <h2> 2. Colors</h2>
+        <div> <img height="100" width="170" alt=" " /> </div>
+      </li>
+      <li class="quickstart-layout">
+        <h2> 3. Layout</h2>
+        <div> <img height="100" width="170" alt=" " /> </div>
+      </li>
+      <li class="quickstart-nav">
+        <h2> 4. Navigation</h2>
+        <div> <img height="100" width="170" alt=" " /> </div>
+      </li>
+    </ul>
+  </div>
+  <div class="hs-form stacked box">
+    <fieldset>
+    <legend></legend>
+    <div class="field-group">
+      <div id="quickstart-top">
+        <!-- Initial State: URL -->
+        <div id="quickstart-url" class="field">
+          <div class="input">
+            <input id="txtURL" class="hs-input huge" value="" />
+            <span style="display: none">Enter the URL of your page and press continue.</span>
+            <input id="btnURL" type="submit" class="hs-button primary" value="Continue >>" />
+          </div>
+          <div id="errorURL" class="hs-message error" style="display: none"> <strong>Oops!</strong> That's not a real URL, give it another try :) </div>
+        </div>
+        <!-- Step One: Logo -->
+        <div id="quickstart-top-logo" class="help" style="display:none">
+          <h1>1. Your Logo - Select your logo in the window below</h1>
+        </div>
+        <!-- Step Two: Logo -->
+        <div id="quickstart-top-colors" class="help" style="display:none">
+          <h1>2. Color Scheme - Select your template colors from the options below</h1>
+        </div>
+        <!-- Step Three: Layout -->
+        <div id="quickstart-top-layout" class="help" style="display:none">
+          <h1>3. Page Layout - Select from a 2-column or 3-column layout</h1>
+        </div>
+        <!-- Step Four: Navigation -->
+        <div id="quickstart-top-nav" class="help" style="display:none">
+          <h1>4. Navigation - Select the pages for your navigation bar</h1>
+        </div>
+      </div>
+      <div id="htmlFrame">
+        <iframe src="welcome.html" width="100%" height="560px" scrolling="no" frameborder="0" style="display:none"> </iframe>
+        <!-- Initial State: Welcome -->
+        <div id="quickstart-frame-welcome" class="help">
+          <h1>Welcome to Quickstart</h1>
+        </div>
+		
+        <!-- Step One: Logo -->
+        <div id="quickstart-frame-logo" class="help" style="display:none"></div>
+		
+        <!-- Step Two: Logo -->
+        <div id="quickstart-frame-colors" class="help" style="display:none"></div>
+		
+        <!-- Step Three: Layout -->
+        <div id="quickstart-frame-layout" class="help" style="display:none"></div>
+		
+        <!-- Step Four: Navigation -->
+        <div id="quickstart-frame-nav" class="help" style="display:none"></div>
+		
+        <div style="clear:both"></div>
+      </div>
+      <div class="actions">
+        <input id="btn-reset" type="submit" class="hs-button secondary" value="Cancel / Start Over" style="display: none" />
+        &nbsp;&nbsp;
+        <input id="btn-continue" type="submit" class="hs-button primary" value="Continue >>" style="display: none" />
+        <input id="btn-finish" type="submit" class="hs-button primary" value="Finish and Create Template" style="display:none" />
+      </div>
+    </div>
+    </fieldset>
+  </div>
+  <!-- END QUICKSTART HTML -->
+</div>
+</body>
+</html>
