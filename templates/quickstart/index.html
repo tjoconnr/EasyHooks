@@ -21,14 +21,16 @@
         <h2> 2. Colors</h2>
         <div> <img height="100" width="170" alt=" " /> </div>
       </li>
+      <li class="quickstart-nav">
+        <h2> 3. Navigation</h2>
+        <div> <img height="100" width="170" alt=" " /> </div>
+      </li>
+      <!--
       <li class="quickstart-layout">
         <h2> 3. Layout</h2>
         <div> <img height="100" width="170" alt=" " /> </div>
-      </li>
-      <li class="quickstart-nav">
-        <h2> 4. Navigation</h2>
-        <div> <img height="100" width="170" alt=" " /> </div>
-      </li>
+      </li>  
+	  -->
     </ul>
   </div>
   <div class="hs-form stacked box">
@@ -40,7 +42,7 @@
         <div id="quickstart-url" class="field">
           <div class="input">
             <input id="txtURL" class="hs-input huge" value="" />
-            <span style="display: none">Enter the URL of your page and press continue.</span>
+            <span style="display: none">Enter the URL of your page and press continue</span>
             <input id="btnURL" type="submit" class="hs-button primary" value="Continue >>" />
           </div>
           <div id="errorURL" class="hs-message error" style="display: none"> <strong>Oops!</strong> That's not a real URL, give it another try :) </div>
@@ -53,35 +55,71 @@
         <div id="quickstart-top-colors" class="help" style="display:none">
           <h1>2. Color Scheme - Select your template colors from the options below</h1>
         </div>
-        <!-- Step Three: Layout -->
+        <!-- Step Three: Navigation -->
+        <div id="quickstart-top-nav" class="help" style="display:none">
+          <h1>3. Navigation - Select the pages for your navigation bar</h1>
+        </div>
+        <!-- Step Three: Layout 
         <div id="quickstart-top-layout" class="help" style="display:none">
           <h1>3. Page Layout - Select from a 2-column or 3-column layout</h1>
         </div>
-        <!-- Step Four: Navigation -->
-        <div id="quickstart-top-nav" class="help" style="display:none">
-          <h1>4. Navigation - Select the pages for your navigation bar</h1>
-        </div>
+		-->
       </div>
       <div id="htmlFrame">
-        <iframe src="welcome.html" width="100%" height="560px" scrolling="no" frameborder="0" style="display:none"> </iframe>
+        <iframe src="frame.html" width="100%" height="560px" scrolling="no" frameborder="0" style="display:none"> </iframe>
         <!-- Initial State: Welcome -->
-        <div id="quickstart-frame-welcome" class="help">
-          <h1>Welcome to Quickstart</h1>
+		
+		<div id="quickstart-frame-loading" class="ajax" style="position:absolute; z-index:9999; display:none">
+          <div>
+            <div style="float:left; width:160px; height:150px;"> <img src="hubspot-small.png" alt="HubSpot" /> </div>
+			<br />
+            <h1>Just a Moment...</h1>
+            <p>We're scanning your existing site to provide you with some options.</p>
+            <img src="ajax.gif" alt="loading..." /> </div>
+        </div>
+        
+        <div id="quickstart-frame-welcome" class="panel">
+          <div>
+            <h1>Welcome to Quickstart!</h1>
+            <h2>Create a HubSpot template in <span class="highlight">three</span> easy steps, here's how:</h2>
+            <br />
+            <br />
+            <br />
+            <div style="float:left; width:200px; height:300px; margin-right: 20px"> <img src="hubspot.png" alt="HubSpot" /> </div>
+            <p><strong>1. Logo</strong><br />
+              Pick your logo from your website images.</p>
+            <br />
+            <br />
+            <p><strong>2. Color Scheme</strong><br />
+              Pick your primary and secondary colors.</p>
+            <br />
+            <br />
+            <p><strong>3. Navigation</strong><br />
+              Select the pages for your navigation bar.</p>
+            <!--
+		  <p><strong>3. Layout</strong><br />
+		  Select a 2 or 3 column layout .</p>
+		  -->
+          </div>
+        </div>
+        <!-- Step One: Logo -->
+        <div id="quickstart-frame-logo" class="help" style="display:none">
+          <div></div>
+        </div>
+        <!-- Step Two: Logo -->
+        <div id="quickstart-frame-colors" class="help" style="display:none">
+          <div></div>
+        </div>
+        <!-- Step Three: Layout -->
+        <div id="quickstart-frame-layout" class="help" style="display:none">
+          <div></div>
+        </div>
+        <!-- Step Four: Navigation -->
+        <div id="quickstart-frame-nav" class="help" style="display:none">
+          <div></div>
         </div>
 		
-        <!-- Step One: Logo -->
-        <div id="quickstart-frame-logo" class="help" style="display:none"></div>
-		
-        <!-- Step Two: Logo -->
-        <div id="quickstart-frame-colors" class="help" style="display:none"></div>
-		
-        <!-- Step Three: Layout -->
-        <div id="quickstart-frame-layout" class="help" style="display:none"></div>
-		
-        <!-- Step Four: Navigation -->
-        <div id="quickstart-frame-nav" class="help" style="display:none"></div>
-		
-        <div style="clear:both"></div>
+        <div style="clear:both; height:0;"></div>
       </div>
       <div class="actions">
         <input id="btn-reset" type="submit" class="hs-button secondary" value="Cancel / Start Over" style="display: none" />

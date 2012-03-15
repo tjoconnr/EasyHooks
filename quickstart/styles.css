@@ -28,6 +28,20 @@
 #htmlFrame a.logo-thumb.show-more{
 	display:none; 
 }
+#htmlFrame a.show-all{
+clear: both;
+width: auto;
+display: block;
+background: #F8F8F8;
+padding: 0 20px;
+height: 50px;
+line-height: 50px;
+font-size: 14px;
+color: #455560;
+font-weight: bold;
+}
+
+
 
 #htmlFrame a.logo-thumb.selected
 {
@@ -35,7 +49,46 @@
 }
 #htmlFrame a.logo-thumb img {max-height:100px; max-width:300px;}
 
-#htmlFrame div.help { width:780px; height:500px; overflow:auto; padding:20px;  }
+#htmlFrame > div { width:820px; height:500px; overflow:auto;  }
+
+#htmlFrame div.help > div {padding:20px;}
+
+#htmlFrame div.help p {font-size:14px; color:gray; }
+
+.highlight{color:#FB6201; font-style:italic}
+
+#htmlFrame div.panel > div {
+	padding:60px 100px 0 !important;
+}
+#htmlFrame div.panel h1 {
+	font-weight:bold;
+	font-size:30px;
+}
+
+#htmlFrame div.ajax > div {
+	margin:130px 130px 0;
+	border:solid 1px #cccccc;
+	padding:40px 40px 60px;
+	background:#f8f8f8;
+	    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -o-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -khtml-border-radius: 7px;
+    border-radius: 7px;
+	-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),0 0 5px #cccccc;
+-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),0 0 5px #cccccc;
+-o-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),0 0 5px #cccccc;
+box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),0 0 5px #cccccc;
+}
+#htmlFrame div.ajax h1 {
+	font-weight:bold;
+	font-size:30px;
+}
+#htmlFrame div.ajax p {
+	margin-bottom:20px;
+	font-size:14px;
+}
 
 
 #btnURL
@@ -106,6 +159,7 @@ ul#quickstart-steps li div {
 **  HS Style Guide Overrides 
 **************************************
 */
+
 .hs-button
 {
     text-align: center;

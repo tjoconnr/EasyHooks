@@ -46,6 +46,8 @@ function nextStep() {
 
 function viewStep(num) {
 	
+	var intMax = 3; 
+	
 	// Update Current Step
     if (console) console.log('viewStep("' + num + '")');
 	jQuery('#quickstart-step').val(num);    
@@ -54,10 +56,11 @@ function viewStep(num) {
 	jQuery('#quickstart-top > div:visible').hide();	
 	jQuery('#quickstart-top > div:eq(' + num + ')').fadeIn();
 	
-	jQuery('#htmlFrame div:visible').hide();	
-	jQuery('#htmlFrame div:eq(' + num + ')').fadeIn();
-	
+	jQuery('#htmlFrame > div:visible').hide();	
+	jQuery('#htmlFrame > div:eq(' + (num+1) + ')').fadeIn();	
+		
 	jQuery('#quickstart-steps li.selected').removeClass('selected');
+	
 	if (num == 0) {
 		jQuery('#btn-continue').hide();
 		jQuery('#btn-finish').hide();
@@ -70,31 +73,32 @@ function viewStep(num) {
 		jQuery('#quickstart-steps li:eq(' + (num-1) + ')').addClass('selected');		
 		jQuery('#quickstart-steps li:eq(' + (num-1) + ') div').slideDown();
 		
-		if (num < 4) {
+		if (num < intMax) {
 			jQuery('#btn-continue').show();
 			jQuery('#btn-reset').show();
 			jQuery('#btn-finish').hide();		
-		} else if (num == 4) {
+		} else if (num == intMax) {
 			jQuery('#btn-continue').hide();
 			jQuery('#btn-finish').show();		
 		}
 	}
 	
 	// Call Panel Functions
+    if (console) console.log('viewStep("' + num + '")');
 	switch(num){
-		case 0: resetPanels();
-		case 1: viewLogo();
-		case 2: viewColors();
-		case 3: viewLayout();
-		case 4: viewNav();
+		case 0: resetPanels(); break;
+		case 1: viewLogo(); break;
+		case 2: viewColors(); break;
+		case 3: viewNav();  break;
+		case 4: viewLayout(); break;
 		default: break;
 	}
 }
 
 function resetPanels()
 {
-	$('#txtURL').val($('#txtURL').next().html()).removeClass('on').removeClass('error'); 
-	jQuery('#htmlFrame > div').html('');
+	jQuery('#txtURL').val(jQuery('#txtURL').next().html()).removeClass('on').removeClass('error'); 
+	jQuery('#htmlFrame > div.help > div').each(function(){ jQuery(this).html('') });
 }
 
 
@@ -115,16 +119,18 @@ function startQuickstart() {
 }
 
 function viewLogo(){
+	if (console) console.log('viewLogo()')
 	if (jQuery('#quickstart-frame-logo a.logo-thumb').length == 0){
-		jQuery('#htmlFrame iframe').attr('src', 'p/?url=' + encodeURI(jQuery('#txtURL').val()));
-		jQuery('#htmlFrame iframe').load(function(){ 											  
+
+		jQuery('#quickstart-frame-loading').fadeIn();
+		jQuery('#htmlFrame iframe').bind('load', function(){ 	
+			
 			// Search all images
 			jQuery('#htmlFrame iframe').contents().find('img').each(function(){
 				var strImage = jQuery(this).attr('src');
 				if (strImage.indexOf('http://tracking.hubspot.com/track') == -1)
 					addLogo(strImage);
 			});
-	
 	
 			// Search background images
 			jQuery('#htmlFrame iframe').contents().find('*').each(function(){
@@ -133,13 +139,17 @@ function viewLogo(){
 					var strImage = bgImage.substring(4, bgImage.length - 1)
 					addLogo(strImage);				
 				}
-			});
+			});	
 			
-			jQuery('#quickstart-frame-logo').append('<a id="show-all" href="javascript:;" class="logo-thumb" onclick="showAllLogos()">Show all images >></a>')					
-			
-			
+			jQuery('#quickstart-frame-logo a.show-me').prependTo('#quickstart-frame-logo > div');
+
+			jQuery('#quickstart-frame-logo > div').append('<a id="show-all" href="javascript:;" class="show-all" onclick="showAllLogos()">Show all images >></a>')					
+			setTimeout(function(){ jQuery('#quickstart-frame-loading').fadeOut();}, 500);
+				jQuery('#quickstart-frame-logo').fadeIn();						
+			jQuery('#htmlFrame iframe').unbind('load');
 			
 		});
+		jQuery('#htmlFrame iframe').attr('src', 'p/?url=' + encodeURI(jQuery('#txtURL').val()));
 	}
 }
 function showAllLogos(){	
@@ -148,8 +158,12 @@ function showAllLogos(){
 }
 function addLogo(strImage){
 	var strClass = "";
-	if(strImage.indexOf('logo') == -1) strClass = "show-more"
-	jQuery('#quickstart-frame-logo').append('<a href="javascript:;" class="logo-thumb ' + strClass + '" onclick="chooseLogo(this)"><img src="' + strImage + '" alt=" " /></a>')					
+	if(strImage.indexOf('logo') == -1) 
+		strClass = "show-more"
+	else
+		strClass = "show-me"
+	
+	jQuery('#quickstart-frame-logo > div').append('<a href="javascript:;" class="logo-thumb ' + strClass + '" onclick="chooseLogo(this)"><img src="' + strImage + '" alt=" " /></a>');					
 }
 function chooseLogo(sender){
 	jQuery('#quickstart-frame-logo a.selected').removeClass('selected');
