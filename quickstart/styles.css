@@ -1,96 +1,89 @@
 ﻿/*
-**************************************
-**  HS Quickstart - Styles.css
-**  TJ O'Connor / 3-9-2012
-**************************************
+***********************************************************************************
+**
+**   HubSpot QuickStart 
+**   Styles.css
+**   TJ O'Connor
+**   3/12/2012
+**
+***********************************************************************************
+*/
+
+/*
+***********************************************************************************
+** Main Panel
+***********************************************************************************
 */
 #htmlFrame
 {
     margin: 20px 0;
-	min-height:500px;
-	background:white;
-	border:solid 1px #cccccc;	
+    min-height: 500px;
+    background: white;
+    border: solid 1px #cccccc;
 }
-
-#htmlFrame a.logo-thumb
+#htmlFrame > div
 {
-	padding:10px; background:white;
-	border:solid 5px #ffffff;
-	display:block;
-	float:left;
-	margin:0 15px 10px 0;
-	overflow:hidden
+    width: 820px;
+    height: 500px;
+    overflow: auto;
 }
-#htmlFrame a:hover.logo-thumb
+
+
+#htmlFrame div.help > div
 {
-	border: solid 5px #cccccc;
-}
-#htmlFrame a.logo-thumb.show-more{
-	display:none; 
-}
-#htmlFrame a.show-all{
-clear: both;
-width: auto;
-display: block;
-background: #F8F8F8;
-padding: 0 20px;
-height: 50px;
-line-height: 50px;
-font-size: 14px;
-color: #455560;
-font-weight: bold;
+    padding: 20px;
 }
 
-
-
-#htmlFrame a.logo-thumb.selected
+#htmlFrame div.help p
 {
-	border: solid 5px #3574E3;
-}
-#htmlFrame a.logo-thumb img {max-height:100px; max-width:300px;}
-
-#htmlFrame > div { width:820px; height:500px; overflow:auto;  }
-
-#htmlFrame div.help > div {padding:20px;}
-
-#htmlFrame div.help p {font-size:14px; color:gray; }
-
-.highlight{color:#FB6201; font-style:italic}
-
-#htmlFrame div.panel > div {
-	padding:60px 100px 0 !important;
-}
-#htmlFrame div.panel h1 {
-	font-weight:bold;
-	font-size:30px;
+    font-size: 14px;
+    color: gray;
 }
 
-#htmlFrame div.ajax > div {
-	margin:130px 130px 0;
-	border:solid 1px #cccccc;
-	padding:40px 40px 60px;
-	background:#f8f8f8;
-	    -moz-border-radius: 7px;
+
+#htmlFrame div.panel > div
+{
+    padding: 60px 100px 0 !important;
+}
+#htmlFrame div.panel h1
+{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#htmlFrame div.ajax > div
+{
+    margin: 130px 130px 0;
+    border: solid 1px #cccccc;
+    padding: 40px 40px 60px;
+    background: #f8f8f8;
+    -moz-border-radius: 7px;
     -webkit-border-radius: 7px;
     -o-border-radius: 7px;
     -ms-border-radius: 7px;
     -khtml-border-radius: 7px;
     border-radius: 7px;
-	-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),0 0 5px #cccccc;
--webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),0 0 5px #cccccc;
--o-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),0 0 5px #cccccc;
-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),0 0 5px #cccccc;
+    -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),0 0 5px #cccccc;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),0 0 5px #cccccc;
+    -o-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),0 0 5px #cccccc;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),0 0 5px #cccccc;
 }
-#htmlFrame div.ajax h1 {
-	font-weight:bold;
-	font-size:30px;
+#htmlFrame div.ajax h1
+{
+    font-weight: bold;
+    font-size: 30px;
 }
-#htmlFrame div.ajax p {
-	margin-bottom:20px;
-	font-size:14px;
+#htmlFrame div.ajax p
+{
+    margin-bottom: 20px;
+    font-size: 14px;
 }
 
-
+/*
+***********************************************************************************
+** Top Panel
+***********************************************************************************
+*/
 #btnURL
 {
     padding: 9px 18px 10px;
@@ -108,6 +101,17 @@ box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),0 0 5px #cccccc;
     color: Black;
 }
 
+
+/*
+***********************************************************************************
+** Sidebar Navigation
+***********************************************************************************
+*/
+#sidebar
+{
+    width: 230px;
+    float: right;
+}
 ul#quickstart-steps
 {
     list-style: none;
@@ -117,48 +121,148 @@ ul#quickstart-steps
 ul#quickstart-steps li
 {
     padding: 15px 20px 20px;
-	border-bottom:dotted 1px #d9d9d9;
+    border-bottom: dotted 1px #d9d9d9;
 }
-ul#quickstart-steps.active li{ 
-    cursor:pointer; 
-}
-ul#quickstart-steps li:hover, ul#quickstart-steps li.selected
+ul#quickstart-steps.active li
 {
-/*
-    -moz-border-radius: 7px 7px 0 0;
-    -webkit-border-radius: 7px;
-    -o-border-radius: 7px;
-    -ms-border-radius: 7px;
-    -khtml-border-radius: 7px;
-    border-radius: 0 7px 7px 0;
-    border: 1px solid #f1f1f1;        
-	background: #f1f1f1;
-*/
+    cursor: pointer;
 }
-ul#quickstart-steps li h2 {
-	color:#999999;
+ul#quickstart-steps.active li.selected
+{
+    cursor:default;
 }
-ul#quickstart-steps li.selected h2,
-ul#quickstart-steps.active li:hover h2 {
-	color:#333333;
+ul#quickstart-steps li h2
+{
+    color: #999999;
 }
-ul#quickstart-steps li div {
-	display:none;
-	height:100px;	
-	width:170px;
-	border:solid 1px #666666;
+ul#quickstart-steps li.selected h2, ul#quickstart-steps.active li:hover h2
+{
+    color: #333333;
+}
+ul#quickstart-steps li > div
+{
+    display: none;
 }
 
-#sidebar
+
+/*
+***********************************************************************************
+** Logo
+***********************************************************************************
+*/
+#quickstart-logo-preview
 {
-    width: 230px;
-    float: right;
+    border: solid 1px #d9d9d9;
+    height: 100px;
+    width: 170px;
+    background-position:10px 10px;
+    background-repeat:no-repeat;
+    background-image:none;
 }
+
+#quickstart-frame-logo a.logo-thumb
+{
+    padding: 10px;
+    background: white;
+    border: solid 5px #ffffff;
+    display: block;
+    float: left;
+    margin: 0 15px 10px 0;
+    overflow: hidden;
+}
+#quickstart-frame-logo a:hover.logo-thumb
+{
+    border: solid 5px #cccccc;
+}
+#quickstart-frame-logo a.logo-thumb.selected
+{
+    border: solid 5px #3574E3;
+}
+#quickstart-frame-logo a.logo-thumb img
+{
+    max-height: 100px;
+    max-width: 300px;
+}
+
+#quickstart-frame-logo a.show-more
+{
+    display: none;
+}
+#quickstart-frame-logo a.show-all
+{
+    clear: both;
+    width: auto;
+    display: block;
+    background: #F8F8F8;
+    padding: 0 20px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    color: #455560;
+    font-weight: bold;
+}
+
+
+
+/*
+***********************************************************************************
+** Colors
+***********************************************************************************
+*/
+#quickstart-frame-colors h2{margin-bottom:10px;}
+#quickstart-frame-colors a.color-swatch{
+	display:block;
+	float:left;
+	height:50px;
+	width:50px;
+	margin:0 15px 20px 0;
+	border:solid 5px #ededed
+}
+#quickstart-frame-colors a:hover.color-swatch
+{
+    border: solid 5px #cccccc;
+}
+#quickstart-frame-colors a.color-swatch.selected
+{
+    border: solid 5px #3574E3;
+}
+#quickstart-frame-colors hr{
+	margin:20px 0;
+	clear:both;
+}
+
+#quickstart-colors-preview > div > span.swatch
+{
+    display: inline-block;
+    border: solid 1px #d9d9d9;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+	position:relative;
+	top:7px;
+}
+
+#quickstart-colors-preview > div
+{
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    color: black;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+
 /*
 **************************************
 **  HS Style Guide Overrides 
 **************************************
 */
+.highlight
+{
+    color: #FB6201;
+    font-style: italic;
+}
 
 .hs-button
 {
